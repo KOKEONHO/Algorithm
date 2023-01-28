@@ -3,6 +3,12 @@ package baekjoon.gold.level_5;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/**
+ * 정말 오래 고민하고 풀은 문제
+ * 난이도에 조금 쫄은 것도 있지만 여러가지 생각해 본 로직들이 다 나사가 하나씩 빠져 있는지
+ *
+ */
+
 public class Baekjoon1011 {
     public static void main(String[] args) throws IOException {
 
