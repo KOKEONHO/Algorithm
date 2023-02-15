@@ -31,21 +31,11 @@ public class Baekjoon1004 {
                 planetList.add(new Point(Integer.parseInt(stringTokenizer.nextToken()), Integer.parseInt(stringTokenizer.nextToken()), Integer.parseInt(stringTokenizer.nextToken())));
             }
 
-            /**
-             * start와 destination를 포함하는 원의 갯수
-             * but, start와 destination을 동시에 포함하는 원은
-             * 카운트를 올리지 않음 !!
-             * 원이 교접하는 경우는 없기 때문에 -> 이 경우만 생각하면 되지 않을까 ...?
-             * 원 안에 start(destination)가 있는지 확인하려면
-             * distance < r : 원 안에 있음
-             * distance > r : 원 안에 없음
-             */
-
             for (int j = 0; j < planetList.size(); j++) {
                 planet = planetList.get(j);
                 startDistance = Math.sqrt(Math.pow(planet.x - start.x, 2) + Math.pow(planet.y - start.y, 2));
                 destinationDistance = Math.sqrt(Math.pow(planet.x - destination.x, 2) + Math.pow(planet.y - destination.y, 2));
-                if (startDistance > planet.r) {     // start는 planet 안에 포함되지 않음
+                if (startDistance > planet.r) {
                     startFlag = false;
                 } else {
                     startFlag = true;
