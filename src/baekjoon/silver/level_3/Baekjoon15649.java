@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 
 public class Baekjoon15649 {
 
-    private static int N, M;
     private static int[] array;
     private static boolean[] visited;
     private static StringBuilder stringBuilder = new StringBuilder();
@@ -17,18 +16,18 @@ public class Baekjoon15649 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());
 
-        N = Integer.parseInt(stringTokenizer.nextToken());
-        M = Integer.parseInt(stringTokenizer.nextToken());
+        int N = Integer.parseInt(stringTokenizer.nextToken());
+        int M = Integer.parseInt(stringTokenizer.nextToken());
 
         array = new int[M];
         visited = new boolean[N];
 
-        dfs(0);
+        dfs(0, N, M);
 
         System.out.println(stringBuilder);
     }
 
-    private static void dfs(int depth) {
+    private static void dfs(int depth, int N, int M) {
 
         if (depth == M) {
             for (int i = 0; i < array.length; i++) {
@@ -41,7 +40,7 @@ public class Baekjoon15649 {
             if (!visited[i]) {
                 visited[i]=true;
                 array[depth] = i + 1;
-                dfs(depth + 1);
+                dfs(depth + 1, N, M);
                 visited[i] = false;
             }
         }
